@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>TUTORIAL js</title>
+  <style>
+      body {
+        font: normal 15pt arial ;
+        background: blue;
+        color: white;
+        text-align: left;
+        
+      }
+  section {
+    background: white;
+    padding: 20px;
+    width: 800px;
+    margin: auto;
+    color: black;
+    text-align: center;
+    box-shadow: 5px 5px 10px black;
+  }
+  input#but1 {
+    margin-top: 20px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 1px 1px 3px black;
+    background: yellow;
+  }
+  </style>
+</head>
+<body>
+<h1 id="tit">JS Aula 1</h1>
+  <section>
+    <h1 id="tis">/*Aprendendo!*/</h1>
+  <p id="p1">Antes de começar você precisa de uma área de programação!<br>
+    se você estiver usando celular, é só você baixa o "CODE", mas se você estiver usando pc é só baixa o "VSCODE" ou abrir o site "VSCODE.DEV"<br>
+    <strong><br>Já fez tudo? agora toque no botão abaixo</strog><br>
+  <input type="Button" onclick="clicar()" value="CONTINUAR" id="but1"</p>
+    <div id="res"></div>
+  </section>
+    <script>
+        function clicar() {
+          var p1 = document.getElementById("p1")
+          p1.innerHTML = '<input type="button" value="PRÓXIMO" onclick=clicar2() id="but1">'
+        }
+    function clicar2() {
+      p1.innerHTML = 'antes de começa eu quero avisar que esta aula é de JS básico! <br><br>O primeiro passo é "DIGITA ALGO NA TELA!" e para fazer isso é bem simples, é só escreve <strong>"document.write("ola mundo")"</Strong>'
+      p1.innerHTML += '<br><br> Tente escrever!<br><input type="text" id="txt1" value=""><input type="button" value="ENVIAR" onclick="clicar3()">'
+      var txt1 = document.getElementById("txt1") 
+    } 
+    function clicar3() {
+      var res = document.getElementById("res")
+      if (txt1.value == 'document.write("ola mundo")' || txt1.value == 'Document.write("ola mundo")' || txt1.value == 'Document.write("olá mundo")') {
+        res.innerHTML = '<br>parece que você escreveu tudo certo!<br>agora toque no botão abaixo para continuar!<br><input type="button" value="PRÓXIMA AULA" onclick="clicar4()" id="butp">'
+        butp.style.background = 'yellow'
+        butp.style.padding = '15px'
+        butp.style.width = '200px'
+      } else {
+        res.innerHTML = '<br>Erro, verifique se estar exatamente como o pedido! letras maiúsculas, menusculas, símbolos, ETC'
+        txt1.focus()
+        document.body.section.style.color = 'red'
+      }
+    }
+    function clicar4() {
+      p1.innerHTML = '<input type="button" value="PRÓXIMO" onclick="clicar5()" id="but2">'
+      but2.style.background = 'yellow'
+      but2.style.padding = '15px'
+      but2.style.width = '200px'
+      res.innerHTML = ''
+    }
+    function clicar5() {
+      tit.innerHTML = "JS aula 2"
+      tis.innerHTML = "/*Praticando*/"
+      p1.innerHTML = 'antes de começar essa aula vamos ver se você realmente aprendeu!<br><br><strong>MARQUE A RESPOSTA CERTA!</strong><br>'
+      p1.innerHTML += 'qual foi o comando que nós aprendemos na aula passada?<br><br>'
+      p1.innerHTML += '<strong>document.ite("ola mundo")</strong> <input type="radio" name="r" id="r1"><br>'
+      p1.innerHTML += '<strong>document.write("ola mundo")</strong><input type="radio" name="r" id="r2"><br>'
+      p1.innerHTML += '<input type="button" onclick="clicar6()" value="VERIFICAR"><br>'
+    }
+    function clicar6() {
+      if (r2.checked) {
+        res.innerHTML = '<br>Parabéns! parece que você é bom em <br> grava as coisas porque você acertou!<br>'
+        res.innerHTML += '<input type="button" onclick="clicar7()" id="but3" value="PRÓXIMO">'
+        but3.style.background = 'yellow'
+        but3.style.padding = '15px'
+        but3.style.width = '200px'
+      } else {
+        res.innerHTML = '<br>você errou! mas não se preocupe por que todo mundo erra uma fez!<br>TENTE MARCA A OUTRA RESPOSTA!'
+      }
+    }
+    function clicar7() {
+      p1.innerHTML = ''
+      res.innerHTML = '<input type="button" onclick="clicar8()" value="PRÓXIMO" id="but1">'
+    }
+    function clicar8() {
+      p1.innerHTML = ''
+      res.innerHTML = ''
+      tis.innerHTML = '/*Aprendendo!*/'
+    }
+    </script>
+</body>
+</html>
